@@ -1,14 +1,13 @@
-## 'makeCacheMatrix' is used to create a matrix, calculate and cache the inverse.  
-## 'cacheSolve' is used to either retrieve the inverted matrix from makeCacheMatrix
-##  or to have makeCacheMatrix calculate and then cache it.
+## 'makeCacheMatrix' is used to create a matrix object that stores the matrix and it's inverse.  
+## 'cacheSolve' is used to either retrieve the cached inverted matrix from the makeCacheMatrix object or calculate and cache it
 
-## Calculate and cache the inverse matrix
+## Create matrix object that stores the original matrix and it's inverse
 
 makeCacheMatrix <- function(x = matrix()) {
 	# reset cached inverted matrix
 	im <- NULL
 	
-	# functions to create matrix object and inverted matrix and retrieve them	
+	# functions to store a matrix and it's inverted matrix and retrieve them	
 	set <- function (y) {
 		x <<- y
 		im <<- NULL
@@ -22,7 +21,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Utilize 'makeCacheMatrix' object to provide inverse of matrix and cache it
+## Looks for cached inverse matrix in 'makeCacheMatrix' object or caclulates and stores it there
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
